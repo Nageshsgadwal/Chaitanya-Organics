@@ -16,7 +16,7 @@ body {
 .hero {
   position:relative;
   height:350px;
-  background:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') center/cover;
+  background:url('farm.jpg') center/cover;
 }
 
 .overlay {
@@ -32,7 +32,12 @@ body {
   text-align:center;
 }
 
-.overlay h1 {font-size:32px; margin:0;}
+.overlay h1 {
+  font-size:32px;
+  margin:0;
+  text-shadow:2px 2px 8px black;
+}
+
 .overlay p {font-size:18px;}
 
 .overlay button {
@@ -42,6 +47,7 @@ body {
   border:none;
   color:white;
   border-radius:5px;
+  cursor:pointer;
 }
 
 /* SECTION */
@@ -72,6 +78,12 @@ h2 {text-align:center;}
 
 .card h3 {margin:10px;}
 
+.card p {
+  margin:10px;
+  font-weight:bold;
+  color:#0a7d2c;
+}
+
 .card button {
   background:#ff9800;
   border:none;
@@ -80,6 +92,12 @@ h2 {text-align:center;}
   margin:10px;
   color:white;
   border-radius:5px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover {
+  transform:scale(1.05);
 }
 
 /* FORM */
@@ -164,6 +182,17 @@ footer {
   </div>
 </div>
 
+<!-- WHY US -->
+<div class="section">
+<h2>🌿 Why Choose Us?</h2>
+<ul style="max-width:500px;margin:auto;">
+<li>✔ 100% Organic Farming</li>
+<li>✔ Direct from Farm</li>
+<li>✔ No Chemicals</li>
+<li>✔ Freshly Harvested</li>
+</ul>
+</div>
+
 <!-- PRODUCTS -->
 <div class="section">
 <h2 id="varieties">🥭 Our Mango Varieties</h2>
@@ -171,29 +200,33 @@ footer {
 <div class="cards">
 
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kesar_mango.jpg">
+<img src="kesar.jpg">
 <h3>Kesar</h3>
+<p>₹120 / kg</p>
 <a href="https://wa.me/918660849779?text=Hi, I want Kesar Mango">
 <button>Order</button></a>
 </div>
 
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Alphonso_mango.jpg">
+<img src="apus.jpg">
 <h3>Apus (Alphonso)</h3>
+<p>₹150 / kg</p>
 <a href="https://wa.me/918660849779?text=Hi, I want Alphonso Mango">
 <button>Order</button></a>
 </div>
 
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Dussehri_mango.jpg">
+<img src="dashera.jpg">
 <h3>Dashera</h3>
+<p>₹100 / kg</p>
 <a href="https://wa.me/918660849779?text=Hi, I want Dashera Mango">
 <button>Order</button></a>
 </div>
 
 <div class="card">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Mallika_mango.jpg">
+<img src="mallika.jpg">
 <h3>Mallika</h3>
+<p>₹110 / kg</p>
 <a href="https://wa.me/918660849779?text=Hi, I want Mallika Mango">
 <button>Order</button></a>
 </div>
@@ -221,6 +254,14 @@ footer {
 
 <button type="submit">Order on WhatsApp</button>
 </form>
+</div>
+
+<!-- DELIVERY -->
+<div class="section">
+<h2>🚚 Delivery</h2>
+<p style="text-align:center;">
+We deliver within 24 hours in nearby areas.
+</p>
 </div>
 
 <!-- PAYMENT -->
@@ -259,6 +300,22 @@ width="100%" height="250"></iframe>
 <a class="whatsapp" href="https://wa.me/918660849779">💬</a>
 
 <script>
+let isKannada = false;
+
+function toggleLang(){
+  if(!isKannada){
+    document.getElementById("title").innerText="🌿 ಚೈತನ್ಯ ಆರ್ಗಾನಿಕ್";
+    document.getElementById("tagline").innerText="ತಾಜಾ ಆರ್ಗಾನಿಕ್ ಮಾವುಗಳು";
+    document.getElementById("varieties").innerText="ಮಾವುಗಳ ವಿಧಗಳು";
+    isKannada = true;
+  } else {
+    document.getElementById("title").innerText="🌿 Chaitanya Organic";
+    document.getElementById("tagline").innerText="Fresh Organic Mangoes Direct from Farm";
+    document.getElementById("varieties").innerText="🥭 Our Mango Varieties";
+    isKannada = false;
+  }
+}
+
 function sendToWhatsApp(e){
   e.preventDefault();
   let name = document.getElementById("name").value;
@@ -274,12 +331,6 @@ Mango: ${mango}
 Quantity: ${qty} kg`;
 
   window.open("https://wa.me/918660849779?text=" + encodeURIComponent(msg));
-}
-
-function toggleLang(){
-  document.getElementById("title").innerText="🌿 ಚೈತನ್ಯ ಆರ್ಗಾನಿಕ್";
-  document.getElementById("tagline").innerText="ತಾಜಾ ಆರ್ಗಾನಿಕ್ ಮಾವುಗಳು";
-  document.getElementById("varieties").innerText="ಮಾವುಗಳ ವಿಧಗಳು";
 }
 </script>
 
