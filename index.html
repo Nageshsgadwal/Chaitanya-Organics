@@ -6,59 +6,61 @@
 <title>Chaitanya Organic</title>
 
 <style>
-body {
-  font-family: 'Segoe UI';
-  margin:0;
-  background:#f0fff0;
-}
+body {margin:0; font-family:'Segoe UI'; background:#f9fff9;}
 
 header {
-  background:linear-gradient(to right, green, darkgreen);
+  background:#0a7d2c;
   color:white;
   text-align:center;
   padding:20px;
 }
 
 .hero {
-  background:url('https://images.unsplash.com/photo-1550258987-190a2d41a8ba') no-repeat center/cover;
+  background:url('https://source.unsplash.com/1600x900/?mango') center/cover;
   height:300px;
   display:flex;
   align-items:center;
   justify-content:center;
   color:white;
-  font-size:28px;
+  font-size:26px;
   font-weight:bold;
 }
 
-.section {
-  padding:20px;
-}
+.section {padding:20px;}
 
 .cards {
   display:flex;
   flex-wrap:wrap;
+  justify-content:center;
   gap:15px;
 }
 
 .card {
   background:white;
-  padding:15px;
-  border-radius:10px;
   width:220px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 3px 10px rgba(0,0,0,0.15);
 }
 
-.card img {
-  width:100%;
-  border-radius:10px;
-}
+.card img {width:100%; height:150px; object-fit:cover;}
 
-button {
+.card button {
   background:orange;
   border:none;
   padding:10px;
-  width:100%;
-  margin-top:10px;
+  width:90%;
+  margin:10px;
+  color:white;
+}
+
+.lang-btn {
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:white;
+  padding:5px 10px;
+  border-radius:5px;
   cursor:pointer;
 }
 
@@ -66,17 +68,32 @@ button {
   position:fixed;
   bottom:20px;
   right:20px;
-  background:green;
-  color:white;
+  background:#25D366;
   padding:15px;
   border-radius:50%;
-  font-size:20px;
+  color:white;
+  font-size:22px;
 }
 
-form input, form select {
-  width:100%;
-  padding:10px;
-  margin:5px 0;
+.payment {
+  background:#fff3cd;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+}
+
+.review {
+  background:white;
+  padding:15px;
+  margin:10px;
+  border-radius:10px;
+}
+
+footer {
+  background:#0a7d2c;
+  color:white;
+  text-align:center;
+  padding:15px;
 }
 
 </style>
@@ -84,80 +101,94 @@ form input, form select {
 
 <body>
 
+<div class="lang-btn" onclick="toggleLang()">ಕನ್ನಡ / English</div>
+
 <header>
-<h1>🌿 Chaitanya Organic</h1>
-<p>Fresh Organic Mangoes Direct from Farm</p>
+<h1 id="title">🌿 Chaitanya Organic</h1>
+<p id="tagline">Fresh Organic Mangoes Direct from Farm</p>
 </header>
 
 <div class="hero">
-Order Fresh Mangoes Today 🥭
+🥭 Premium Mangoes Available
 </div>
 
 <div class="section">
-<h2>🥭 Our Mango Varieties</h2>
+<h2 id="varieties">Our Mango Varieties</h2>
+
 <div class="cards">
 
 <div class="card">
 <img src="https://source.unsplash.com/300x200/?kesar-mango">
 <h3>Kesar</h3>
-<p>Sweet & aromatic</p>
-<a href="https://wa.me/918660849779?text=I want Kesar Mango">
+<a href="https://wa.me/918660849779?text=I want Kesar Mango 5kg">
 <button>Order</button></a>
 </div>
 
 <div class="card">
 <img src="https://source.unsplash.com/300x200/?alphonso-mango">
-<h3>Apus (Alphonso)</h3>
-<p>Premium rich taste</p>
-<a href="https://wa.me/918660849779?text=I want Alphonso Mango">
+<h3>Apus</h3>
+<a href="https://wa.me/918660849779?text=I want Alphonso Mango 5kg">
 <button>Order</button></a>
 </div>
 
 <div class="card">
 <img src="https://source.unsplash.com/300x200/?mango">
 <h3>Dashera</h3>
-<p>Juicy & delicious</p>
-<a href="https://wa.me/918660849779?text=I want Dashera Mango">
+<a href="https://wa.me/918660849779?text=I want Dashera Mango 5kg">
 <button>Order</button></a>
 </div>
 
 <div class="card">
 <img src="https://source.unsplash.com/300x200/?organic-mango">
 <h3>Mallika</h3>
-<p>Unique flavor</p>
-<a href="https://wa.me/918660849779?text=I want Mallika Mango">
+<a href="https://wa.me/918660849779?text=I want Mallika Mango 5kg">
 <button>Order</button></a>
 </div>
 
 </div>
 </div>
 
+<div class="section payment">
+<h2>💰 Payment (UPI)</h2>
+<p>Pay using GPay / PhonePe</p>
+<p><b>UPI ID:</b> yourupi@okbank</p>
+</div>
+
 <div class="section">
-<h2>📲 Quick Order Form</h2>
-<form>
-<input type="text" placeholder="Your Name">
-<input type="tel" placeholder="Phone Number">
-<select>
-<option>Select Mango</option>
-<option>Kesar</option>
-<option>Apus</option>
-<option>Dashera</option>
-<option>Mallika</option>
-</select>
-<input type="number" placeholder="Quantity (kg)">
-<button type="submit">Submit</button>
-</form>
+<h2>⭐ Customer Reviews</h2>
+
+<div class="review">"Very fresh mangoes! Loved the taste." ⭐⭐⭐⭐⭐</div>
+<div class="review">"Best organic mangoes in our area." ⭐⭐⭐⭐⭐</div>
+
 </div>
 
 <div class="section">
 <h2>📍 Location</h2>
-<iframe 
-src="https://maps.google.com/maps?q=Hagargi&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" height="250">
-</iframe>
+<iframe src="https://maps.google.com/maps?q=Hagargi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="250"></iframe>
 </div>
 
+<footer>
+📍 Opposite Sangam Petrol Pump, Hagargi  
+📞 8660849779
+</footer>
+
 <a class="whatsapp" href="https://wa.me/918660849779">💬</a>
+
+<script>
+let kannada = false;
+
+function toggleLang(){
+  if(!kannada){
+    document.getElementById("title").innerText="🌿 ಚೈತನ್ಯ ಆರ್ಗಾನಿಕ್";
+    document.getElementById("tagline").innerText="ತಾಜಾ ಆರ್ಗಾನಿಕ್ ಮಾವುಗಳು";
+    document.getElementById("varieties").innerText="ಮಾವುಗಳ ವಿಧಗಳು";
+    kannada=true;
+  } else {
+    location.reload();
+  }
+}
+</script>
 
 </body>
 </html>
