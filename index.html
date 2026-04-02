@@ -6,28 +6,49 @@
 <title>Chaitanya Organic</title>
 
 <style>
-body {margin:0; font-family:'Segoe UI'; background:#f9fff9;}
+body {
+  margin:0;
+  font-family:'Segoe UI', sans-serif;
+  background:#f5fff5;
+}
 
-header {
-  background:#0a7d2c;
+/* HERO */
+.hero {
+  position:relative;
+  height:350px;
+  background:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') center/cover;
+}
+
+.overlay {
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   color:white;
   text-align:center;
-  padding:20px;
 }
 
-.hero {
-  background:url('https://source.unsplash.com/1600x900/?mango') center/cover;
-  height:300px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.overlay h1 {font-size:32px; margin:0;}
+.overlay p {font-size:18px;}
+
+.overlay button {
+  margin-top:15px;
+  padding:12px 20px;
+  background:#ff9800;
+  border:none;
   color:white;
-  font-size:26px;
-  font-weight:bold;
+  border-radius:5px;
 }
 
+/* SECTION */
 .section {padding:20px;}
+h2 {text-align:center;}
 
+/* CARDS */
 .cards {
   display:flex;
   flex-wrap:wrap;
@@ -40,30 +61,65 @@ header {
   width:220px;
   border-radius:12px;
   overflow:hidden;
-  box-shadow:0 3px 10px rgba(0,0,0,0.15);
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
-.card img {width:100%; height:150px; object-fit:cover;}
+.card img {
+  width:100%;
+  height:150px;
+  object-fit:cover;
+}
+
+.card h3 {margin:10px;}
 
 .card button {
-  background:orange;
+  background:#ff9800;
   border:none;
   padding:10px;
   width:90%;
   margin:10px;
   color:white;
-}
-
-.lang-btn {
-  position:absolute;
-  top:10px;
-  right:10px;
-  background:white;
-  padding:5px 10px;
   border-radius:5px;
-  cursor:pointer;
 }
 
+/* FORM */
+form {
+  max-width:400px;
+  margin:auto;
+}
+
+form input, form select {
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+
+form button {
+  background:green;
+  color:white;
+  border:none;
+  padding:10px;
+}
+
+/* PAYMENT */
+.payment {
+  background:#fff3cd;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+}
+
+/* REVIEWS */
+.review {
+  background:white;
+  padding:10px;
+  margin:10px;
+  border-radius:8px;
+}
+
+/* WHATSAPP */
 .whatsapp {
   position:fixed;
   bottom:20px;
@@ -75,20 +131,7 @@ header {
   font-size:22px;
 }
 
-.payment {
-  background:#fff3cd;
-  padding:15px;
-  border-radius:10px;
-  text-align:center;
-}
-
-.review {
-  background:white;
-  padding:15px;
-  margin:10px;
-  border-radius:10px;
-}
-
+/* FOOTER */
 footer {
   background:#0a7d2c;
   color:white;
@@ -96,6 +139,15 @@ footer {
   padding:15px;
 }
 
+.lang-btn {
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:white;
+  padding:5px 10px;
+  border-radius:5px;
+  cursor:pointer;
+}
 </style>
 </head>
 
@@ -103,9 +155,136 @@ footer {
 
 <div class="lang-btn" onclick="toggleLang()">ಕನ್ನಡ / English</div>
 
-<header>
-<h1 id="title">🌿 Chaitanya Organic</h1>
-<p id="tagline">Fresh Organic Mangoes Direct from Farm</p>
+<!-- HERO -->
+<div class="hero">
+  <div class="overlay">
+    <h1 id="title">🌿 Chaitanya Organic</h1>
+    <p id="tagline">Fresh Organic Mangoes Direct from Farm</p>
+    <a href="#order"><button>Order Now</button></a>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<div class="section">
+<h2 id="varieties">🥭 Our Mango Varieties</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kesar_mango.jpg">
+<h3>Kesar</h3>
+<a href="https://wa.me/918660849779?text=Hi, I want Kesar Mango">
+<button>Order</button></a>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Alphonso_mango.jpg">
+<h3>Apus (Alphonso)</h3>
+<a href="https://wa.me/918660849779?text=Hi, I want Alphonso Mango">
+<button>Order</button></a>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Dussehri_mango.jpg">
+<h3>Dashera</h3>
+<a href="https://wa.me/918660849779?text=Hi, I want Dashera Mango">
+<button>Order</button></a>
+</div>
+
+<div class="card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Mallika_mango.jpg">
+<h3>Mallika</h3>
+<a href="https://wa.me/918660849779?text=Hi, I want Mallika Mango">
+<button>Order</button></a>
+</div>
+
+</div>
+</div>
+
+<!-- ORDER FORM -->
+<div class="section" id="order">
+<h2>📲 Order Now</h2>
+
+<form onsubmit="sendToWhatsApp(event)">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<select id="mango" required>
+<option value="">Select Mango</option>
+<option>Kesar</option>
+<option>Alphonso</option>
+<option>Dashera</option>
+<option>Mallika</option>
+</select>
+
+<input type="number" id="qty" placeholder="Quantity (kg)" required>
+
+<button type="submit">Order on WhatsApp</button>
+</form>
+</div>
+
+<!-- PAYMENT -->
+<div class="section payment">
+<h2>💰 Payment (UPI)</h2>
+<p>Pay using GPay / PhonePe</p>
+
+<p><b>UPI ID:</b> 8660849779@ybl</p>
+
+<a href="upi://pay?pa=8660849779@ybl&pn=Chaitanya Organic&cu=INR">
+<button style="background:green;color:white;padding:10px;border:none;border-radius:5px;">
+Pay Now
+</button>
+</a>
+</div>
+
+<!-- REVIEWS -->
+<div class="section">
+<h2>⭐ Customer Reviews</h2>
+<div class="review">"Very fresh mangoes!" ⭐⭐⭐⭐⭐</div>
+<div class="review">"Best quality fruits!" ⭐⭐⭐⭐⭐</div>
+</div>
+
+<!-- MAP -->
+<div class="section">
+<h2>📍 Location</h2>
+<iframe src="https://maps.google.com/maps?q=Hagargi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="250"></iframe>
+</div>
+
+<footer>
+📍 Opposite Sangam Petrol Pump, Hagargi – 585102  
+<br>📞 8660849779
+</footer>
+
+<a class="whatsapp" href="https://wa.me/918660849779">💬</a>
+
+<script>
+function sendToWhatsApp(e){
+  e.preventDefault();
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let mango = document.getElementById("mango").value;
+  let qty = document.getElementById("qty").value;
+
+  let msg = `Hi, I want to order mangoes 🌿🥭
+
+Name: ${name}
+Phone: ${phone}
+Mango: ${mango}
+Quantity: ${qty} kg`;
+
+  window.open("https://wa.me/918660849779?text=" + encodeURIComponent(msg));
+}
+
+function toggleLang(){
+  document.getElementById("title").innerText="🌿 ಚೈತನ್ಯ ಆರ್ಗಾನಿಕ್";
+  document.getElementById("tagline").innerText="ತಾಜಾ ಆರ್ಗಾನಿಕ್ ಮಾವುಗಳು";
+  document.getElementById("varieties").innerText="ಮಾವುಗಳ ವಿಧಗಳು";
+}
+</script>
+
+</body>
+</html><p id="tagline">Fresh Organic Mangoes Direct from Farm</p>
 </header>
 
 <div class="hero">
